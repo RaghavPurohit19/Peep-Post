@@ -8,8 +8,8 @@ const Header = () => {
       <Image
         cursor={"pointer"}
         alt = 'logo'
-        w={6}
-        src = {colorMode === "dark" ? "/light-logo.svg" : "/dark-logo.svg"}
+        w={50}
+        src = {colorMode === "dark" ? "/PP-light.png" : "/PP-dark.png"}
         onClick={toggleColorMode}
       />
     </Flex>
