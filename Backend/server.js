@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from './db/connectDB.js';
 import cookieParser from 'cookie-parser';
 import userRoutes from "./Routes/userRoutes.js";
+import postRoute from "./Routes/postRoutes.js";
 
 // middle ware : it is a function that runs between request and response
 
@@ -20,6 +21,7 @@ app.use(cookieParser());        // allows us to get the cookie from the request 
 
 // Routes
 app.use("/api/users", userRoutes)
+app.use("/api/posts", postRoute);
 
 app.listen(PORT, () => console.log(`server started at http://localhost:${PORT}`));
 
