@@ -30,6 +30,7 @@ import useShowToast from '../hooks/useShowToast'
         username : "",
         email : "",
         password : "",
+        bio: "",
     });
 
     const toast = useToast();
