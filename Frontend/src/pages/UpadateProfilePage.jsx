@@ -28,6 +28,7 @@ export default function UpdateProfilePage() {
     });
     console.log(user, "user is here");
     const fileRef = useRef(null);
+    const [updating, setUpdating] = useState(false);
 
     const {handleImageChange, imgUrl} = usePreviewImg();
 
@@ -35,6 +36,8 @@ export default function UpdateProfilePage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if(updating) return;
+        setUpdating(true);
         try {
             // console.log(inputs);
             const res = await fetch(`/api/users/update/${user._id}`,{
@@ -55,6 +58,8 @@ export default function UpdateProfilePage() {
             localStorage.setItem("user-peeps", JSON.stringify(data));
         } catch (error) {
             showToast("Error", error.message, "error"); // Use error.message
+        } finally {
+          setUpdating(false);
         }
         
     }
@@ -152,7 +157,7 @@ export default function UpdateProfilePage() {
             w="full"
             _hover={{
               bg: 'green.500',
-            }} type='submit'>
+            }} type='submit' isLoading={updating}>
             Submit
           </Button>
         </Stack>
