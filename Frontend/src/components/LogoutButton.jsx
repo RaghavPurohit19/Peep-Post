@@ -1,3 +1,5 @@
+// we are not using this componenet anymore
+
 import { Button } from '@chakra-ui/react'
 import { useSetRecoilState } from 'recoil'
 import userAtom from '../atoms/userAtom'
@@ -27,7 +29,7 @@ const LogoutButton = () => {
             // console.log(error);
             showToast("Error", error, "error");
         }
-    }
+    };
   return (
     <Button 
         position={"fixed"}
