@@ -29,9 +29,10 @@ const PostPage = () => {
   const { pid } = useParams();
   const currentUser = useRecoilValue(userAtom);
   const navigate = useNavigate();
-
   const currentPost = posts[0];
+
   useEffect(() => {
+    setPosts([]);
     const getPost = async () => {
       try {
         const res = await fetch(`/api/posts/${pid}`);

@@ -83,7 +83,7 @@ const UserHeader = ({user}) => {
                 </Text>
                 <Flex gap={2} alignItems={"center"}>
                     <Text fontSize={"sm"}>{user.username}</Text>
-                    <Text fontSize={"xs"} bg={"gray.dark"} color={"gray.light"} p={1} borderRadius={"full"} >threads.net</Text>
+                    <Text fontSize={"xs"} bg={"gray.dark"} color={"white"} p={1} borderRadius={"full"} >peeps.com</Text>
                 </Flex>
             </Box>
             <Box>
