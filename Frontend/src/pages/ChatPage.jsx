@@ -3,6 +3,7 @@ import {BsSearch} from 'react-icons/bs'
 import React from 'react'
 import Conversation from '../components/Conversation'
 import {GiConversation} from 'react-icons/gi'
+import MessageContainer from '../components/MessageContainer'
 
 const ChatPage = () => {
   return <Box position={"absolute"}
@@ -44,7 +45,7 @@ const ChatPage = () => {
           </Flex>
         </form>
 
-        {true && 
+        {false && 
           [0,1,2,3,4].map((_,i) => (
             <Flex key={i} gap={4} alignItems={"center"} p={"1"} borderRadius={"md"}>
               <Box>
@@ -63,12 +64,13 @@ const ChatPage = () => {
 
       </Flex>
 
-      <Flex flex={70} borderRadius={"md"} p={2} flexDir={"column"} alignItems={"center"} justifyContent={"center"} height={"400px"} >
+      {/* <Flex flex={70} borderRadius={"md"} p={2} flexDir={"column"} alignItems={"center"} justifyContent={"center"} height={"400px"} >
         <GiConversation size={100} />
         <Text fontSize={20} > Select a conversation to start messaging</Text>
-      </Flex>
+      </Flex> */}
+
       {/* messageContainer on the right */}
-      {/* <Flex flex={70}>messageContainer</Flex> */}
+      <MessageContainer />
     </Flex>
   </Box>
 }
