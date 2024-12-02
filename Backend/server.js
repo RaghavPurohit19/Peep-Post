@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import connectDB from './db/connectDB.js';
 import cookieParser from 'cookie-parser';
 import userRoutes from "./Routes/userRoutes.js";
-import postRoute from "./Routes/postRoutes.js";
+import postRoutes from "./Routes/postRoutes.js";
+import messageRoutes from "./Routes/messageRoutes.js";
 import {v2 as cloudinary} from "cloudinary";
 
 // middle ware : it is a function that runs between request and response
@@ -28,7 +29,8 @@ app.use(cookieParser());        // allows us to get the cookie from the request 
 
 // Routes
 app.use("/api/users", userRoutes)
-app.use("/api/posts", postRoute);
+app.use("/api/posts", postRoutes);
+app.use("/api/message", messageRoutes);
 
 app.listen(PORT, () => console.log(`server started at http://localhost:${PORT}`));
 
