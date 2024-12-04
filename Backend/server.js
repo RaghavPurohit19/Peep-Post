@@ -30,7 +30,7 @@ app.use(cookieParser());        // allows us to get the cookie from the request 
 // Routes
 app.use("/api/users", userRoutes)
 app.use("/api/posts", postRoutes);
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.listen(PORT, () => console.log(`server started at http://localhost:${PORT}`));
 
