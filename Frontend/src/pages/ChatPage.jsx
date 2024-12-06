@@ -9,6 +9,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { conversationsAtom, selectedConversationAtom } from '../atoms/messagesAtom';
 import userAtom from '../atoms/userAtom';
 
+
 const ChatPage = () => {
   const [searchingUser, setSearchingUser ] = useState(false);
   const [loadingConversations, setLoadingConversations] = useState(true);
@@ -66,6 +67,23 @@ const ChatPage = () => {
         });
         return;
       }
+
+      const mockConversation = {
+        mock: true,
+        lastMessage: {
+          text: "",
+          sender: "",
+        },
+        _id: Date.now(),
+        participants: [
+          {
+            _id: searchedUser._id,
+            username: searchedUser.username,
+            profilePic: searchedUser.profilePic,
+          },
+        ],
+      };
+      setConversations((prevConvs) => [...prevConvs, mockConversation]);
 
     } catch (error) {
       showToast("Error", error.message, "error");
